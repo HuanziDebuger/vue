@@ -1,1 +1,1 @@
-# vue(images/1.png)
+# vue(./images/1.png)
