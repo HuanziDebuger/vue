@@ -1,0 +1,369 @@
+html,body{
+	margin:0;padding:0;
+        width:100%;height:100%;
+}
+*,*:before,*:after{
+	box-sizing: border-box;
+}
+*{
+	font-family: STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+}
+a{
+	text-decoration: none;
+	color:inherit;
+}
+body{
+	background-color: #fdfaf7;
+}
+ul{
+	padding:0;
+	margin: 0;
+}
+#home{
+    height:100%;
+}
+#header{
+	position:relative;
+	width:100%;height:50%;	
+}
+#blogTitle{
+	position:absolute;
+	width:100%;
+	height:20%;
+	text-align: center;
+	padding-top:8%;
+        z-index: 4;
+}
+#blogTitle a{
+	font:100 56px 'AR CHRISTY', 'Helvetica Neue',"Microsoft YaHei","微软雅黑";
+	color:#f2f2f2;
+	letter-spacing: 5px;
+	outline:none;
+}
+/* 箭头 */
+/*
+.subtitle{
+	width:20px;height:20px;
+	border-left: 3px solid #f2f2f2;
+	border-top:3px solid #f2f2f2;
+	position: absolute;
+	bottom:-130%;
+	left:0;right:0;
+	margin:0 auto;
+	animation:slideDown 3s infinite;
+	-webkit-transform:rotate(-135deg);
+	transform:rotate(-135deg);
+}*/
+@keyframes slideDown{
+	0%{
+		bottom:-130%;
+	}
+	50%{
+		bottom:-135%;
+	}
+}
+
+/* 固定的导航栏 */
+#navigator{
+	position: fixed;
+	width:100%;
+	height:60px;
+	top:0;
+	background: rgba(98, 41, 84, .8);
+	z-index: 2;
+}
+#navigator:before{
+	content:"哔哔肾";
+	color:#fff;
+	display: block;
+        width: 150px;
+	height:40px;
+	font:100 20px/40px STXihei,"华文细黑";
+	position: absolute;
+	top:10px;
+	left:46px;
+}
+
+#navList{
+	display: block;
+	width:100%;
+	list-style:none;
+	text-align: center;
+}
+#navList li{
+	display: inline-block;
+	height:60px;
+	line-height: 60px;
+	border-radius: 18px;
+	color:#fff;
+	transition:all .3s;
+	position: relative;
+	font-size:14px;
+}
+#navList li:not(:last-child):after{
+	content:'';
+	display: block;
+	width:2px;
+	height:2px;
+	border-radius: 50%;
+	background-color: #eee;
+	position:absolute;
+	top:30px;
+	right:-3px;
+}
+#navList li a{
+	display: inline-block;
+	height:100%;
+	padding:0 20px;
+}
+
+/* 分类标签 */
+.catListPostCategory{
+	position:absolute;
+	top:0;
+	width:100%;
+	height:50%;
+    background: #622954;
+    padding-top:15%;
+	z-index: 3;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .6)
+}
+.catListPostCategory ul{
+	display: block;
+	width:560px;
+	margin:0 auto;
+	text-align: center;
+	list-style:none;
+	padding:0;
+}
+.catListPostCategory ul li{
+	display: inline-block;
+	height:36px;
+	color:#f2f2f2;
+	font:100 14px "Microsoft YaHei","微软雅黑",Helvetica;
+}
+.catListPostCategory ul li a{
+	display: inline-block;
+	height:28px;
+	line-height: 28px;
+	padding:0 15px;
+	-webkit-transition:all .3s;
+	transition:all .3s;
+	border-radius: 14px;
+}
+.catListPostCategory ul li a:hover,
+.catListPostCategory ul li a:active{
+	background-color: #FBE251;
+        color: #622954;
+}
+.catListTitle{
+	display: none;
+}
+/* 内容区 */
+#mainContent{
+	width:800px;
+	margin:0 auto;
+	background-color: #fefefe;
+        padding-bottom:20px;
+        padding-top:30px;
+}
+.dayTitle{
+	display:none;
+}
+.postTitle{
+    margin-bottom: 30px;
+}
+.postTitle a{
+        padding:0px 30px;
+	font-size:24px;
+	color:#282828;
+	-webkit-transition:all .2s;
+	transition:all .2s;
+}
+.postTitle a:hover{
+	color:#FF4E50;
+}
+.c_b_p_desc{
+        padding:0px 30px;
+	margin:20px 0;
+	color:#555;
+	line-height: 1.5;
+	position: relative;
+	font-size: 15px;
+}
+.c_b_p_desc_readmore{
+        font-weight:bold;
+        color:#53346D;
+	-webkit-transition:all .2s;
+	transition:all .2s;
+}
+.c_b_p_desc_readmore:before{
+    content:"……";
+    color:#53346D;
+}
+.c_b_p_desc_readmore:hover{
+	color:#FF4E50;
+}
+.postDesc{
+	text-align: right;
+	font-size: 13px;
+	color:#999;
+        padding-right:30px;
+        padding-bottom:20px;
+        border-bottom:1px solid #eee;
+        margin-bottom:20px;
+}
+
+/* 下一页 */
+#nav_next_page{
+	padding:40px 0;
+	background-color: #fff;
+}
+#nav_next_page a{
+	display: block;
+	width:120px;
+	height:36px;
+	line-height: 36px;
+	text-align: center;
+	margin:auto;
+	border:1px solid #FF4E50;
+	font-size: 14px;
+	color:#FF4E50;
+	-webkit-transition:all .2s;
+	transition:all .2s;
+}
+#nav_next_page a:hover{
+	background-color: #FF4E50;
+	color:#fff;
+}
+/* 页脚 */
+#footer{
+	height:50px;
+	background-color: #010101;
+	text-align: center;
+	line-height: 50px;
+	color:#2a0845;
+	font-size: 13px;
+	letter-spacing: 3px;
+	animation: blink 8s infinite;
+}
+@keyframes blink{
+	0%{
+		color:#2a0845;
+	}
+	30%{
+		color:#fff;
+		text-shadow: 0 0 10px #fff;
+	}
+	60%{
+		color:#2a0845;
+		text-shadow: none;
+	}
+}
+
+/* 详情页 */
+#post_detail{ 
+    width:100%;
+    top:0;left:0;
+    z-index:5;
+    background-color:#f2f2f2;
+}
+#topics{
+    width:800px;
+    padding-top:2px;
+    margin:0 auto;
+    background-color:#fefefe;
+    padding-bottom:30px;
+}
+#topics img {
+    max-width: 100%;
+}
+.postBody{
+  padding:15px 30px;
+  border-top:1px solid #eee;
+}
+#blog_post_info_block{
+  margin-top:50px;
+  border-top:1px solid #eee;
+  padding-top:20px;
+}
+#cnblogs_post_body p {
+  line-height: 1.8;
+}
+
+/* 分类列表 */
+.entrylistTitle{
+    font-size:18px;
+    padding-left:20px;
+    margin-bottom:20px;
+    margin-top:0;
+}
+.entrylistItem{
+    border-top:1px solid #eee;
+    padding:20px 0;
+}
+.entrylistPosttitle{
+    font-size:24px;
+    padding-left:20px;
+    -webkit-transition:all .3s;
+    transition:all .3s;
+}
+.entrylistPosttitle:hover{
+    color:#FF4E50;
+}
+.entrylistItemPostDesc{
+    font-size:13px;
+    color:#999;
+    text-align:right;
+    padding-right:20px;
+}
+
+/* 评论区 */
+#comment_form{
+    padding: 0 30px;
+}
+#under_post_news, #under_post_kb{
+    display: none;
+}
+#blog-comments-placeholder{
+    padding:0 30px;
+    margin-top:-20px;
+}
+#RecentCommentsBlock{
+    display:none;
+}
+.feedbackItem{
+    margin-bottom:20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee;
+}
+.feedback_area_title{
+    display:none;
+}
+.feedbackListSubtitle {
+    margin-bottom: 10px;
+    font-size:14px;
+    color: #999;
+}
+.feedbackManage{
+    margin-bottom:10px;
+}
+#tip_comment2+p{
+    display:none;
+}
+.comment_vote {
+    font-size: 13px;
+}
+.blog_comment_body {
+    font-size: 15px;
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ccc; 
+  border-radius: 3px;
+  border-right: 2px solid #f5f5f5;
+}

@@ -1,0 +1,52 @@
+<!--vue实现双向绑定的原理-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue双向绑定原理</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" value="" id="g">
+		<span id="s"></span>
+		<input type="text">
+	</div>
+	<script>
+	//极简双向绑定的实现
+	var obj ={};
+	Object.defineProperty(obj,'hello',{
+		get:function(){
+			//获取input框的值
+			oldVal=document.getElementById('g').value;
+			//获取到的值传递给set方法
+			//this.set(oldVal);
+			return oldVal;
+		},
+		set:function(newVal){
+			//拿到输入的值，并且显示出来
+			document.getElementById('s').innerHTML = newVal;
+		}
+
+	});
+	//绑定一个keyup的监听事件，
+	document.addEventListener('keyup',function(e){
+		//调用set方法
+		//console.log(e.target);
+		console.log(obj.hello);
+		obj.hello = e.target.value;
+	});
+	/*var dom =nodeToFragment(document.getElementById('app'));
+	console.log(dom);
+	function nodeToFragment(node){
+		var flag =document.createDocumentFragment();
+		var child;
+		while (child = node.firstChild){
+			flag.appendChild(child);
+		}
+		return flag;
+	}
+	document.getElementById('app').appendChild(dom);*/
+	</script>
+	
+</body>
+</html>
